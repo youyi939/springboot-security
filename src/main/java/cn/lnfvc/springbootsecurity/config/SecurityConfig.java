@@ -30,9 +30,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/level2/**").hasRole("vip2");
 //        http.formLogin();//默认自动生成登录页面
 //    }
-
-
-
+//
+//
+//
 //    @Override
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //        // 基于内存的用户存储
@@ -50,13 +50,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-
-    private DataSource dataSource;
-
-    @Autowired
-    public SecurityConfig(DataSource dataSource){
-        this.dataSource = dataSource;
-    }
+//
+//    private DataSource dataSource;
+//
+//    @Autowired
+//    public SecurityConfig(DataSource dataSource){
+//        this.dataSource = dataSource;
+//    }
 
     /**
      * 配置拦截器保护请求
@@ -71,16 +71,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().httpBasic();
     }
 
-    /**
-     * UserDetailsService 用户名，密码，以及其他属性的查找，Spring Security提供内存以及JDBC实现
-     */
-    @Override
-    @Bean
-    public UserDetailsService userDetailsService() {
-        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
-        jdbcUserDetailsManager.setDataSource(dataSource);
-        return jdbcUserDetailsManager;
-    }
+//    /**
+//     * UserDetailsService 用户名，密码，以及其他属性的查找，Spring Security提供内存以及JDBC实现
+//     */
+//    @Override
+//    @Bean
+//    public UserDetailsService userDetailsService() {
+//        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+//        jdbcUserDetailsManager.setDataSource(dataSource);
+//        return jdbcUserDetailsManager;
+//    }
 
     /**
      * 根据自动匹配密码编码器

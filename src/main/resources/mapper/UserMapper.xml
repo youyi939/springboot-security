@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.lnfvc.springbootsecurity.dao.UserDao">
+    <resultMap type="cn.lnfvc.springbootsecurity.entitis.UserPo" id="UserMap">
+        <id column="username" property="username"/>
+        <result column="password" property="password"/>
+        <collection property="authorities" ofType="cn.lnfvc.springbootsecurity.entitis.RolePo">
+            <id column="username" property="username"/>
+            <result column="authority" property="authority"/>
+        </collection>
+    </resultMap>
+
+    <select id="loadUserByUsername" resultMap="UserMap">
+		select
+			users.username, users.password, authorities.authority
+		from
+			users left join authorities on users.username = authorities.username
+		 where users.username=#{username}
+	</select>
+</mapper>
