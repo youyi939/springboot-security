@@ -20,6 +20,11 @@
 
     <dependencies>
 
+<!--        JDBC-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
 
 <!--       security安全 -->
         <dependency>

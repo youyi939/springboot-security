@@ -10,4 +10,5 @@ public class SpringbootSecurity {
         SpringApplication.run(SpringbootSecurity.class, args);
     }
 
+
 }
